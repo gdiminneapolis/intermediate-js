@@ -109,6 +109,7 @@
 #gdi h1, #gdi h3, #gdi h4, #gdi h5, #gdi h2 {
     margin:0.5em 0 0 0;
     font-size:50pt;
+    font-weight: 600;
     color:#Fff;
 }
 
