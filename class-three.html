@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <title>GDI Mpls - Intermediate JavaScript</title>
+
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,400italic' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/reveal.css">
+  <link rel="stylesheet" type="text/css" href="prism/prism.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+  <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+  <script type="text/javascript" src="js/reveal.js"></script>
+
+  <script type="text/javascript" src="prism/prism.js"></script>
+  <script type="text/javascript" src="js/scripts.js"></script>
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+
+  <div class="reveal" id="gdi">
+
+    <div class="slides">
+
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - -->
+      <!-- Introduction -->
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - -->
+      <section>
+
+        <h3 class="uppercase no_margin">Intermediate JavaScript</h3>
+        <div class="meta blue uppercase small_meta">06.18.18 &#8729; GDI MPLS &#8729; Amy Gebhardt</div>
+        <img src="img/gdi_logo_badge.png" class="top_margin width_50" style="width:30%;">
+
+        <div class="spacer"></div>
+
+        <div class="left_align" style="margin-top:-120px;">
+          <div class="meta white big_meta uppercase tiny_meta">Wifi</div>
+          <div class="meta gold tiny_meta">Network:
+            <span class="white">-</span>
+          </div>
+          <div class="meta gold tiny_meta">Password:
+            <span class="white">-</span>
+          </div>
+          <div class="meta gold tiny_meta">Slides:
+            <span class="white">https://gdiminneapolis.github.io/intermediate-js/class-three.html</span>
+          </div>
+          <div class="meta gold tiny_meta">Project Files:
+            <span class="white">https://tinyurl.com/yd9bo3y6</span>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="left_align">
+        <h3 class="uppercase no_margin gold">Welcome Back!</h3>
+      </section>
+
+      <section>
+        <h3 class="no_margin navy">You belong here.</h3>
+      </section>
+
+      <section class="left_align">
+
+        <h3 class="uppercase no_margin white">Expectations</h3>
+        <div class="spacer big_spacer"></div>
+
+        <div class="fragment meta pink small_meta">Review</div>
+        <div class="spacer small_spacer"></div>
+        <div class="fragment meta pink small_meta">Vanilla JavaScript is ugly</div>
+        <div class="spacer small_spacer"></div>
+        <div class="fragment meta pink small_meta">Define library and framework</div>
+        <div class="spacer small_spacer"></div>
+        <div class="fragment meta pink small_meta">Learn how to research, implement, and use a library</div>
+        <div class="spacer small_spacer"></div>
+        <div class="fragment meta pink small_meta">Hear what the "cool" kids are using these days</div>
+        <div class="spacer small_spacer"></div>
+        <div class="fragment meta pink small_meta">Do some cool stuff with jQuery <span class="fragment meta white tiny_meta">(today!)</span></div>
+        <div class="spacer small_spacer"></div>
+
+      </section>
+
+      <section>
+
+        <h3 class="uppercase no_margin navy">get excited.</h3>
+        <div class="spacer small_spacer"></div>
+        <img src="img/excited.gif">
+
+      </section>
+
+      <section>
+
+        <h3 class="white">Remember this?</h3>
+
+        <div class="spacer big_spacer"></div>
+
+        <div class="fragment kind_of_skinny_pre no_margin_pre" style="height:605px;">
+            <pre class="language-markup" data-src="src_samples/jquery_tease.js"></pre>
+            <div style="clear:both;"></div>
+        </div>
+
+    </section>
+
+      <section>
+
+        <h2 class="gold">jQuery</h2>
+
+        <div class="spacer big_spacer"></div>
+
+        <div class="meta big_meta white">
+            It's already in your project's <span class="inline_code">lib</span> directory!
+        </div>
+
+        <hr />
+
+        <div class="meta small_meta white">
+            Include a reference in a <span class="inline_code">script</span> tag<br />in the <span class="inline_code">head</span>
+            of your <span class="inline_code">index.html</span>.
+        </div>
+
+    </section>
+
+    <section>
+
+        <div class="white meta">Selecting DOM elements is way easier.</div>
+
+        <div class="fragment skinny_pre" style="height:325px;">
+            <pre class="language-markup" data-src="src_samples/intro_jquery_html.html"></pre>
+            <div style="clear:both;"></div>
+        </div>
+
+        <div class="fragment skinny_pre" style="height:265px;">
+            <pre class="language-markup" data-src="src_samples/intro_jquery_selector.js"></pre>
+            <div style="clear:both;"></div>
+        </div>
+
+
+    </section>
+
+    <section>
+
+        <div class="white meta">Getting the content of an element is easy, too.</div>
+
+        <div class="fragment skinny_pre" style="height:325px;">
+            <pre class="language-markup" data-src="src_samples/intro_jquery_html.html"></pre>
+            <div style="clear:both;"></div>
+        </div>
+
+        <div class="fragment skinny_pre" style="height:265px;">
+            <pre class="language-markup" data-src="src_samples/jquery_text_html.js"></pre>
+            <div style="clear:both;"></div>
+        </div>
+
+    </section>
+
+    <section>
+
+        <h4 class="no_margin gold">Let's try it!</h4>
+
+        <div class="spacer"></div>
+
+        <div class="fragment meta white small_meta">
+            Add the following DOM elements to your <span class="inline_code">index.html</span>
+        </div>
+
+        <div class="fragment" style="height:375px;">
+            <pre class="language-markup" data-src="src_samples/jquery_lets_try_it_dom.html"></pre>
+            <div style="clear:both;"></div>
+        </div>
+
+    </section>
+
+    <section>
+
+        <h4 class="no_margin gold">Let's try it!</h4>
+
+        <div class="spacer"></div>
+
+        <div class="fragment meta white small_meta">
+            Using jQuery <span class="gold">selectors</span> and the <span class="inline_code">text()</span> function,
+            display the first name and <span class="inline_code">the_best</span> interest in an <span class="inline_code">alert()</span> box.
+        </div>
+
+    </section>
+
+    <section>
+
+        <div class="white meta">Just like with vanilla JavaScript,<br />you set <span class="inline_code">text()</span> and <span class="inline_code">html()</span> too.</div>
+
+        <div class="fragment" style="height:375px;">
+            <pre class="language-markup" data-src="src_samples/get_set_jquery.js"></pre>
+            <div style="clear:both;"></div>
+        </div>
+
+    </section>
+
+    <section>
+
+        <div class="white meta">
+            Adding and removing classes makes a lot more sense.
+        </div>
+
+        <div class="fragment" style="height:75px;">
+            <pre class="language-markup" data-src="src_samples/add_remove_class.js"></pre>
+            <div style="clear:both;"></div>
+        </div>
+
+        <hr />
+
+        <div class="white meta fragment">
+            And changing inline styles is easy, too.
+        </div>
+
+        <div class="fragment" style="height:75px;">
+            <pre class="language-markup" data-src="src_samples/inline_styles_jquery.js"></pre>
+            <div style="clear:both;"></div>
+        </div>
+
+    </section>
+
+    <section>
+
+        <div class="white meta">
+            The best part? <span class="fragment gold">event handlers</span>.
+        </div>
+
+        <div class="fragment skinny_pre" style="height:375px;">
+            <pre class="language-markup" data-src="src_samples/event_handlers_jquery.js"></pre>
+            <div style="clear:both;"></div>
+        </div>
+
+    </section>
+
+    <section>
+
+        <h4 class="no_margin gold">Let's try it!</h4>
+
+        <div class="spacer"></div>
+
+        <div class="fragment meta white big_meta">
+            When <span class="inline_code">last_name</span> is clicked, change<br />the size of the text to <span class="inline_code">100pt</span>.
+        </div>
+
+    </section>
+
+    <section>
+
+        <h4 class="no_margin gold">Showing/Hiding Elements</h4>
+
+        <div class="fragment skinny_pre" style="height:375px;">
+            <pre class="language-markup" data-src="src_samples/jquery_functions.js"></pre>
+            <div style="clear:both;"></div>
+        </div>
+
+    </section>
+
+    <section>
+
+        <h4 class="no_margin gold">Let's try it!</h4>
+
+        <div class="spacer"></div>
+
+        <div class="fragment meta white big_meta">
+            When the <span class="inline_code">h1</span> is clicked, toggle the<br />
+            visibility of the <span class="inline_code">ul</span> list.
+        </div>
+
+        <hr />
+
+        <div class="fragment meta blue big_meta">
+            Hint: check out jQuery's <span class="inline_code">slideToggle()</span> http://api.jquery.com/slidetoggle/
+        </div>
+
+    </section>
+
+    <section>
+
+      <h2 class="gold">Building an<br />interactive form</h2>
+
+  </section>
+
+  <section class="left_align">
+
+      <h2 class="white">Here's what we're building:</h2>
+      <span class="blue meta tiny_meta">https://gdiminneapolis.github.io/intermediate-js/form-example/demo.html</span>
+
+  </section>
+
+  <section>
+
+      <h2 class="white">You need to know how to read documentation and find answers on your own.</h2>
+
+  </section>
+
+  <section class="left_align">
+
+      <h4 class="gold">Your new project files:</h4>
+
+      <div class="spacer"></div>
+
+      <div class="meta white">
+          index.html<br />
+          <span class="blue tiny_meta">Has a whole bunch of new DOM elements already made for you</span>
+      </div>
+
+      <div class="spacer"></div>
+
+      <div class="meta white">
+          styles.css<br />
+          <span class="blue tiny_meta">Has all of the styles you'll need for the form and is already linked to in index.html</span>
+      </div>
+
+      <div class="spacer"></div>
+
+      <div class="meta white">
+          scripts.js<br />
+          <span class="blue tiny_meta">Is already linked to in index.html (along with jQuery in your lib directory)</span>
+      </div>
+
+      <div class="spacer"></div>
+
+      <div class="meta white">
+          All of your steps can be found in the <span class="gold">comments</span> of the <span class="inline_code">form/scripts.js</span> file.
+      </div>
+
+  </section>
+
+  <section>
+
+    <img src="img/you-can-do-it.gif">
+
+  </section>
+
+  <section class="left_align">
+
+      <h2 class="blue uppercase">Thanks for coming!</h2>
+
+      <div class="spacer"></div>
+
+      <div class="meta big_meta pink">
+          We love your feedback!
+      </div>
+
+      <div class="meta white small_meta small_top_margin">
+          https://goo.gl/forms/98nIDJepzBajGDt13
+      </div>
+
+      <div class="spacer big_spacer"></div>
+
+      <div class="meta tiny_meta white">
+          Take the survey before you go, and you'll have a chance to win a prize!
+      </div>
+
+  </section>
+
+      </div>
+
+      <footer>
+        <div id="twitter">
+          <i class="fa fa-twitter"></i>
+          @GDImpls &#8729; @amlyhamm &#8729; #learnJS &#8729; #gdi
+        </div>
+      </footer>
+
+    </div>
+
+</body>
+
+</html>

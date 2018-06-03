@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <title>GDI Mpls - Intermediate JavaScript</title>
+
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,400italic' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/reveal.css">
+  <link rel="stylesheet" type="text/css" href="prism/prism.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+  <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+  <script type="text/javascript" src="js/reveal.js"></script>
+
+  <script type="text/javascript" src="prism/prism.js"></script>
+  <script type="text/javascript" src="js/scripts.js"></script>
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+
+  <div class="reveal" id="gdi">
+
+    <div class="slides">
+
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - -->
+      <!-- Introduction -->
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - -->
+      <section>
+
+        <h3 class="uppercase no_margin">Intermediate JavaScript</h3>
+        <div class="meta blue uppercase small_meta">06.04.18 &#8729; GDI MPLS &#8729; Amy Gebhardt</div>
+        <img src="img/gdi_logo_badge.png" class="top_margin width_50" style="width:30%;">
+
+        <div class="spacer"></div>
+
+        <div class="left_align" style="margin-top:-120px;">
+          <div class="meta white big_meta uppercase tiny_meta">Wifi</div>
+          <div class="meta gold tiny_meta">Network:
+            <span class="white">-</span>
+          </div>
+          <div class="meta gold tiny_meta">Password:
+            <span class="white">-</span>
+          </div>
+          <div class="meta gold tiny_meta">Slides:
+            <span class="white">https://gdiminneapolis.github.io/intermediate-js/class-one.html</span>
+          </div>
+          <div class="meta gold tiny_meta">Project Files:
+            <span class="white">https://tinyurl.com/yd9bo3y6</span>
+          </div>
+        </div>
+
+      </section>
+
+      <section>
+        <h3 class="no_margin navy">you belong here.</h3>
+      </section>
+
+      <section class="left_align">
+
+        <h3 class="uppercase no_margin gold">Welcome!</h3>
+        <div class="spacer big_spacer"></div>
+
+        <div class="fragment meta white small_meta">Who are you?</div>
+        <div class="spacer small_spacer"></div>
+
+        <div class="fragment meta white small_meta">What do you do?</div>
+        <div class="spacer small_spacer"></div>
+
+        <div class="fragment meta white small_meta">How did you hear about Girl Develop It?</div>
+        <div class="spacer small_spacer"></div>
+
+        <div class="fragment meta white small_meta">On a scale of 1 to "I could do this while sleeping" how comfortable are you with JavaScript and programming concepts?</div>
+
+      </section>
+
+      <section class="left_align">
+
+        <h3 class="uppercase no_margin white">Expectations</h3>
+        <div class="spacer big_spacer"></div>
+
+        <div class="fragment meta pink small_meta">Review <span class="fragment meta white tiny_meta">(today!)</span></div>
+        <div class="spacer small_spacer"></div>
+        <div class="fragment meta pink small_meta">Vanilla JavaScript is ugly</div>
+        <div class="spacer small_spacer"></div>
+        <div class="fragment meta pink small_meta">Define library and framework</div>
+        <div class="spacer small_spacer"></div>
+        <div class="fragment meta pink small_meta">Learn how to research, implement, and use a library</div>
+        <div class="spacer small_spacer"></div>
+        <div class="fragment meta pink small_meta">Hear what the "cool" kids are using these days</div>
+        <div class="spacer small_spacer"></div>
+        <div class="fragment meta pink small_meta">Do some cool stuff with jQuery</div>
+        <div class="spacer small_spacer"></div>
+
+      </section>
+
+      <section>
+
+        <h3 class="uppercase no_margin navy">get excited.</h3>
+        <div class="spacer small_spacer"></div>
+        <img src="img/excited.gif">
+
+      </section>
+
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - -->
+      <!-- Review - Part 1 -->
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - -->
+      <section>
+        <h1 class="uppercase no_margin gold">Review</h1>
+      </section>
+
+      <section>
+
+        <div class="spacer"></div>
+
+        <h3 class="no_margin blue">What is JavaScript?</h3>
+
+        <section>
+
+          <div id="server_graphic" class="fragment"></div>
+
+          <div class="fragment meta white">
+            <div class="spacer"></div>
+            <div class="spacer"></div>
+            A
+            <span class="gold">client-side</span>
+            <br />processing language.
+          </div>
+
+          <div class="spacer"></div>
+
+          <div class="fragment meta white">
+            The
+            <span class="gold">browser</span> reads
+            <br />and executes the code.
+          </div>
+
+        </section>
+
+        <section>
+
+          <div class="spacer"></div>
+
+          <div id="js_graphic" class="fragment"></div>
+
+          <div class="spacer"></div>
+
+          <div class="fragment meta white">
+            <div class="spacer"></div>
+            <div class="spacer"></div>
+            Works with
+            <span class="gold">HTML</span> and
+            <span class="gold">CSS</span>.
+          </div>
+
+          <div class="spacer"></div>
+
+          <div class="fragment meta white">Let's you build
+            <span class="gold">dynamic</span>
+            <br />web pages that respond
+            <br />to
+            <span class="gold">user input</span>.</div>
+
+        </section>
+
+      </section>
+
+      <section>
+
+        <h3 class="navy">Just like with CSS, you can put your JavaScript into separate files.</h3>
+        <h4 class="blue">JavaScript files have a
+          <span class="inline_code">.js</span> extension.</h4>
+
+      </section>
+
+      <section>
+
+        <h4 class="no_margin gold">Set up some project files:</h4>
+
+        <span class="spacer big_spacer"></span>
+
+        <div class="fragment meta white small_meta">
+          Download the project files by going to:
+          <span class="pink">https://tinyurl.com/yd9bo3y6</span>
+        </div>
+
+        <hr />
+
+        <div class="fragment meta white small_meta">
+          Unzip the
+          <span class="inline_code">intermediate-js-project-files.zip</span> file and move
+          <br/> the folder somewhere handy (in your repos
+          <br />folder, on your desktop, etc).
+        </div>
+
+        <hr />
+
+        <div class="fragment meta white small_meta">
+          Open your code editor, then open
+          <br /> your
+          <span class="inline_code">intermediate-js-project-files</span> directory.
+        </div>
+
+      </section>
+
+      <section>
+
+        <div class="fragment meta white small_meta">
+          Add a link to the
+          <span class="inline_code">scripts.js</span> file by modifying your
+          <span class="inline_code">index.html</span>.
+          <br />
+          <span class="tiny_meta">Don't forget to save!</span>
+        </div>
+
+        <div class="fragment skinny_pre" style="height:320px;">
+          <pre class="language-markup" data-src="src_samples/begin_index.html"></pre>
+          <div style="clear:both;"></div>
+        </div>
+
+        <hr>
+
+        <div class="fragment meta white small_meta">
+          Add this JavaScript to
+          <span class="inline_code">scripts.js</span> & save again:
+        </div>
+
+        <div class="fragment skinny_pre">
+          <pre class="language-markup" data-src="src_samples/begin_js.js"></pre>
+          <div style="clear:both;"></div>
+        </div>
+
+      </section>
+
+      <section>
+
+        <div class="meta white small_meta">
+          Open
+          <span class="inline_code">index.html</span> in Google Chrome. What do you see?
+        </div>
+
+      </section>
+
+      <section class="highlighting_code_slide">
+
+        <h3 class="blue uppercase" style="font-size:39pt">So... what did we just do?</h3>
+
+        <h4 class="mono_font gray highlight_single_line_text">
+          document.write("JavaScript is awesome!");
+        </h4>
+
+        <!-- <h4 class="mono_font light_gray fragment highlight_single_line_text" data-fragment-index="1">
+          <span class="gold">document</span>.write("JavaScript is awesome!");
+        </h4>
+
+        <h4 class="mono_font light_gray fragment highlight_single_line_text" data-fragment-index="2">
+          document
+          <span class="gold">.</span>write("JavaScript is awesome!");
+        </h4>
+
+        <h4 class="mono_font light_gray fragment highlight_single_line_text" data-fragment-index="3">
+          document.
+          <span class="gold">write(</span>"JavaScript is awesome!"
+          <span class="gold">)</span>;
+        </h4>
+
+        <h4 class="mono_font light_gray fragment highlight_single_line_text" data-fragment-index="4">
+          document.write(
+          <span class="gold">"JavaScript is awesome!"</span>);
+        </h4>
+
+        <h4 class="mono_font light_gray fragment highlight_single_line_text" data-fragment-index="5">
+          document.write("JavaScript is awesome!")
+          <span class="gold">;</span>
+        </h4> -->
+
+        <div class="spacer big_spacer"></div>
+        <hr />
+
+        <div class="spacer big_spacer"></div>
+        <div class="fragment">
+          <div class="white meta small_meta">
+            We
+            <span class="gold">invoked</span> the
+            <span class="inline_code">write</span>
+            <span class="gold">function</span> on the
+            <span class="gold">global</span>
+            <span class="gold">object</span>:
+            <span class="inline_code">document</span>.
+          </div>
+
+          <hr />
+
+          <div class="meta white small_meta">
+            When we
+            <span class="gold">invoked</span> it, we gave it a
+            <span class="gold">parameter</span>
+            <br />of
+            <span class="gold">type</span>
+            <span class="gold">string</span>:
+            <span class="inline_code">"JavaScript is awesome!"</span>.
+          </div>
+
+          <hr />
+
+          <div class="meta white small_meta">
+
+            We ended the
+            <span class="gold">statement</span> with a
+            <span class="inline_code">;</span>.
+          </div>
+        </div>
+
+      </section>
+
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - -->
+      <!-- Review - Deep Dive (counter) -->
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - -->
+      <section>
+
+        <div id="ddr">
+
+          <div id="result">0</div>
+          <button id="ddr_subtract">-</button>
+          <button id="ddr_add">+</button>
+
+        </div>
+
+      </section>
+
+      <section>
+
+        <h4 class="no_margin gold">Let's try it!</h4>
+
+        <span class="spacer big_spacer"></span>
+
+        <div class="fragment meta white small_meta">
+          Go back to your
+          <span class="inline_code">index.html</span> file.
+        </div>
+
+        <hr />
+
+        <div class="fragment meta white small_meta">
+          Set up a few
+          <span class="gold">DOM</span> elements in the
+          <span class="inline_code">&lt;body&gt;</span> of your page:
+        </div>
+
+        <div class="fragment skinny_pre" style="height:265px;">
+          <pre class="language-markup" data-src="src_samples/counter_dom.html"></pre>
+          <div style="clear:both;"></div>
+        </div>
+
+        <div class="fragment meta tiny_meta white">When you're ready, save and open the file in Chrome.</div>
+
+      </section>
+
+      <section>
+
+        <h4 class="no_margin gold">Let's try it!</h4>
+
+        <span class="spacer big_spacer"></span>
+
+        <div class="fragment meta white small_meta">
+          Add a link to the
+          <span class="inline_code">counter.css</span> file by modifying
+          <br />the
+          <span class="inline_code">head</span> of your
+          <span class="inline_code">index.html</span>.
+        </div>
+
+        <div class="fragment skinny_pre" style="height:170px;">
+          <pre class="language-markup" data-src="src_samples/add_counter_styles.html"></pre>
+          <div style="clear:both;"></div>
+        </div>
+
+        <div class="fragment meta tiny_meta white">When you're ready, save and open the file in Chrome.</div>
+
+      </section>
+
+      <section>
+
+        <h4 class="no_margin gold">Quick note...</h4>
+
+        <div class="spacer"></div>
+        <div class="fragment meta white small_meta">
+          This is not a CSS course, but it
+          <i>is</i> important to know when to use JavaScript and when to use CSS.
+        </div>
+
+      </section>
+
+      <section>
+
+        <h4 class="no_margin blue">Finally, onto the JavaScript!</h4>
+
+        <div class="spacer big_spacer"></div>
+
+        <div class="fragment meta white small_meta">
+          We need to
+          <span class="gold">select</span> the
+          <span class="inline_code">result</span>,
+          <span class="inline_code">subtract</span>, and
+          <span class="inline_code">add</span> elements.
+        </div>
+
+        <hr />
+
+        <div class="fragment meta white small_meta">
+          Store each element into a new
+          <span class="gold">variable</span>.
+        </div>
+
+        <hr />
+
+        <div class="fragment meta white small_meta">
+          To confirm you've successfully
+          <span class="gold">selected</span> them, output their
+          <span class="inline_code">innerHTML</span>
+          using
+          <span class="inline_code">document.write()</span>,
+          <span class="inline_code">alert()</span>, or
+          <span class="inline_code">console.log()</span>
+        </div>
+
+      </section>
+
+      <section>
+
+        <div class="fragment meta white tiny_meta task_quote">
+          We need to
+          <span class="gold">select</span> the
+          <span class="inline_code">result</span>,
+          <span class="inline_code">subtract</span>, and
+          <span class="inline_code">add</span> elements.
+        </div>
+
+        <div class="spacer big_spacer"></div>
+        <div class="spacer big_spacer"></div>
+
+        <div class="fragment meta white small_meta">Since these
+          <span class="gold">elements</span> are all accessible by an
+          <span class="inline_code">id</span>, we can use JavaScript's
+          <span class="inline_code">document.getElementById()</span> function.
+
+          <div class="fragment" style="height:265px; float:left;">
+            <pre class="language-markup" style="width:395px;" data-src="src_samples/counter_dom.html"></pre>
+            <div style="clear:both;"></div>
+          </div>
+
+          <div class="fragment" style="height:265px; float:left;">
+            <pre class="language-markup" style="width:450px;padding:20px;padding-bottom:26px;" data-src="src_samples/counter_get_element_by_id.js"></pre>
+            <div style="clear:both;"></div>
+          </div>
+
+
+
+      </section>
+
+      <section>
+
+        <div class="fragment meta white tiny_meta task_quote">
+          Store each element into a new
+          <span class="gold">variable</span>.
+        </div>
+
+        <div class="spacer big_spacer"></div>
+        <div class="spacer big_spacer"></div>
+
+        <div class="fragment meta white small_meta">The
+          <span class="gold">returned</span> value from each
+          <span class="inline_code">document.getElementById()</span> can
+          <br />be stored in a new
+          <span class="gold">variable</span> that we initialize using
+          <br />the
+          <span class="inline_code">var variableName = value;</span> syntax.
+        </div>
+
+        <div class="fragment skinny_pre" style="height:265px;">
+          <pre class="language-markup" data-src="src_samples/init_variables.js"></pre>
+          <div style="clear:both;"></div>
+        </div>
+
+      </section>
+
+      <section>
+
+        <div class="fragment meta white tiny_meta task_quote">
+          To confirm you've successfully
+          <span class="gold">selected</span> them, output their
+          <span class="inline_code">innerHTML</span>
+          using
+          <span class="inline_code">document.write()</span> ,
+          <span class="inline_code">alert()</span> , or
+          <span class="inline_code">console.log()</span>
+
+        </div>
+
+        <div class="spacer big_spacer"></div>
+        <div class="spacer big_spacer"></div>
+
+        <div class="fragment meta white small_meta">We'll access the
+          <span class="inline_code">innerHTML</span>
+          <span class="gold">property</span> from each of our new
+          <span class="gold">variables</span> using
+          <span class="gold">dot notation</span>.
+        </div>
+
+        <div class="fragment skinny_pre" style="height:80px;">
+          <pre class="language-markup" data-src="src_samples/dot_notation.js"></pre>
+          <div style="clear:both;"></div>
+        </div>
+
+        <hr />
+
+        <div class="fragment meta white small_meta">Using any of the three output methods,
+          <br />display the value of
+          <span class="inline_code">innerHTML</span>.
+        </div>
+
+        <div class="fragment" style="height:120px;">
+          <pre class="language-markup" data-src="src_samples/output_methods.js"></pre>
+          <div style="clear:both;"></div>
+        </div>
+
+      </section>
+
+      <section>
+
+
+        <h4 class="no_margin blue">Let's add some events!</h4>
+
+        <div class="spacer big_spacer"></div>
+
+        <div class="fragment meta white small_meta">
+          Next, we'll need to add an
+          <span class="gold">event listener</span> to handle the
+          <span class="inline_code">click</span>
+          event for the
+          <span class="inline_code">add</span> and
+          <span class="inline_code">subtract</span> buttons.
+        </div>
+
+        <hr />
+
+        <div class="fragment meta white small_meta">
+          To confirm you've successfully captured the
+          <span class="inline_code">click</span>
+          <span class="gold">event</span>, output a
+          <span class="inline_code">"hello world from the [add][subtract] click event!"</span>
+          message using
+          <span class="inline_code">document.write()</span>,
+          <span class="inline_code">alert()</span>, or
+          <span class="inline_code">console.log()</span>
+        </div>
+
+
+      </section>
+
+      <section>
+
+        <div class="fragment meta white tiny_meta task_quote">
+          Next, we'll need to add an
+          <span class="gold">event listener</span> to handle the
+          <br />
+          <span class="inline_code">click</span>
+          event for the
+          <span class="inline_code">add</span> and
+          <span class="inline_code">subtract</span> buttons.
+        </div>
+
+        <div class="spacer big_spacer"></div>
+        <div class="spacer big_spacer"></div>
+
+        <div class="fragment meta white small_meta">Use the
+          <span class="inline_code">addEventListener()</span> method on the
+          <span class="gold">Element
+            <br />object</span> using
+          <span class="gold">dot notation</span>
+          to capture the
+          <span class="inline_code">click</span>
+          <span class="gold">event</span>
+          <br />for both
+          <span class="inline_code">add</span>
+          and
+          <span class="inline_code">subtract.</span>
+        </div>
+
+        <div class="fragment skinny_pre" style="height:265px;">
+          <pre class="language-markup" data-src="src_samples/add_event_listener.js"></pre>
+          <div style="clear:both;"></div>
+        </div>
+
+      </section>
+
+      <section>
+
+        <div class="meta white tiny_meta task_quote">
+          Next, we'll need to add an
+          <span class="gold">event listener</span> to handle the
+          <br />
+          <span class="inline_code">click</span>
+          event for the
+          <span class="inline_code">add</span> and
+          <span class="inline_code">subtract</span> buttons.
+        </div>
+
+        <div class="spacer big_spacer"></div>
+        <div class="spacer big_spacer"></div>
+
+        <div class="fragment meta white small_meta">The
+          <span class="inline_code">addEventListener()</span> method takes in two
+          <span class="gold">arguments</span>.
+          <br />The first is a
+          <span class="gold">string</span> and refers to the name of the event.
+          <br />In this case,
+          <span class="inline_code">"click"</span>.
+        </div>
+
+        <hr />
+
+        <div class="fragment meta white small_meta">The second
+          <span class="gold">argument</span> is a
+          <span class="gold">function</span> that is
+          <br />
+          <span class="gold">invoked</span> when the
+          <span class="gold">event</span> is triggered.
+        </div>
+
+        <div class="fragment skinny_pre" style="height:265px;">
+          <pre class="language-markup" data-src="src_samples/add_event_listener_with_arguments.js"></pre>
+          <div style="clear:both;"></div>
+        </div>
+
+      </section>
+
+      <section>
+
+        <div class="fragment meta white tiny_meta task_quote">
+          To confirm you've successfully captured the
+          <span class="inline_code">click</span>
+          <span class="gold">event</span>, output a
+          <span class="inline_code">"hello world from the [add][subtract] click event!"</span>
+          message using
+          <span class="inline_code">document.write()</span>,
+          <span class="inline_code">alert()</span>, or
+          <span class="inline_code">console.log()</span>
+        </div>
+
+        <div class="spacer big_spacer"></div>
+        <div class="spacer big_spacer"></div>
+
+        <div class="fragment meta white small_meta">Using any of the three methods, display the message.
+          <br />Make them unique, so you can see the difference
+          <br />between
+          <span class="inline_code">add</span> and
+          <span class="inline_code">subtract</span>.
+        </div>
+
+        <div class="fragment skinny_pre" style="height:185px;">
+          <pre class="language-markup" data-src="src_samples/display_event_listener_results.js"></pre>
+          <div style="clear:both;"></div>
+        </div>
+
+        <div class="fragment tiny_meta meta white">Open in Chrome to confirm the results!</div>
+
+      </section>
+
+      <section>
+
+        <h4 class="no_margin blue">Update the result</h4>
+
+        <div class="spacer big_spacer"></div>
+
+        <div class="fragment meta white small_meta">
+          Get the current
+          <span class="gold">content</span> of the
+          <span class="inline_code">result</span>
+          <span class="gold">element</span>.
+        </div>
+
+        <hr />
+
+        <div class="fragment meta white small_meta">
+          Using JavaScript
+          <span class="gold">operators</span>, do the assumed operation (+1 if it's add, -1 if it's subtract) each time the
+          <span class="gold">buttons</span> are clicked.
+        </div>
+
+        <hr />
+
+        <div class="fragment meta white small_meta">
+          Update the
+          <span class="inline_code">HTML</span> of the
+          <span class="inline_code">result</span>
+          <span class="gold">element</span>, so
+          <br />the user can see what's happening.
+        </div>
+
+        <hr />
+
+        <div class="fragment meta white small_meta">
+          Test your work!
+        </div>
+
+      </section>
+
+      <section>
+
+        <div class="fragment meta white tiny_meta task_quote">
+          Get the current
+          <span class="gold">content</span> of the
+          <span class="inline_code">result</span>
+          <span class="gold">element</span>.
+        </div>
+
+        <div class="spacer big_spacer"></div>
+        <div class="spacer big_spacer"></div>
+
+        <div class="fragment meta white small_meta">
+          We can get this by accessing the
+          <span class="inline_code">innerHTML</span> property
+          <br />on the
+          <span class="gold">Element object</span> using
+          <span class="gold">dot notation</span>. Let's go ahead
+          <br /> and store it in a new
+          <span class="gold">variable</span>.
+        </div>
+
+        <div class="fragment skinny_pre" style="height:185px;">
+          <pre class="language-markup" data-src="src_samples/save_current_value.js"></pre>
+          <div style="clear:both;"></div>
+        </div>
+
+
+      </section>
+
+      <section>
+
+        <div class="fragment meta white tiny_meta task_quote">
+          Using JavaScript
+          <span class="gold">operators</span>, do the assumed operation (+1 if it's add, -1 if it's subtract) each time the
+          <span class="gold">buttons</span> are clicked.
+        </div>
+
+        <div class="spacer big_spacer"></div>
+        <div class="spacer big_spacer"></div>
+
+        <div class="fragment meta white small_meta">
+          This snippet is for the
+          <span class="inline_code">add</span> button, so we'll add 1 to the
+          <span class="inline_code">currentResult</span>
+          <span class="gold">variable</span> and store that in a
+          <span class="inline_code">newResult</span>
+          <span class="gold">variable</span>.
+        </div>
+
+        <div class="fragment skinny_pre" style="height:185px;">
+          <pre class="language-markup" data-src="src_samples/add_one.js"></pre>
+          <div style="clear:both;"></div>
+        </div>
+
+        <div class="fragment meta tiny_meta blue">
+          Full disclosure: I'm intentionally leading you astray, here...
+        </div>
+
+        <div class="fragment meta tiny_meta white">
+          Output the value of
+          <span class="inline_code">newResult</span>. Is it what you expect?
+        </div>
+
+
+      </section>
+
+      <section>
+
+        <div class="meta white tiny_meta task_quote">
+          Using JavaScript
+          <span class="gold">operators</span>, do the assumed operation (+1 if it's add, -1 if it's subtract) each time the
+          <span class="gold">buttons</span> are clicked.
+        </div>
+
+        <div class="spacer big_spacer"></div>
+        <div class="spacer big_spacer"></div>
+
+        <div class="fragment meta white small_meta">
+          JavaScript
+          <span class="gold">operators</span> behave differently depending
+          <br />on the
+          <span class="gold">data types</span>
+          being used.
+        </div>
+
+        <hr />
+
+        <div class="fragment meta white small_meta">
+          We need to convert the
+          <span class="gold">string</span> from
+          <span class="inline_code">innerHTML</span> to an
+          <span class="gold">integer</span> using JavaScript's
+          <span class="inline_code">parseInt()</span> function before we add or subtract 1 from it.
+        </div>
+
+        <div class="fragment skinny_pre" style="height:185px;">
+          <pre class="language-markup" data-src="src_samples/add_one_correct.js"></pre>
+          <div style="clear:both;"></div>
+        </div>
+
+        <div class="fragment meta tiny_meta white">
+          Output the value of
+          <span class="inline_code">newResult</span>. Is it what you expect?
+        </div>
+
+      </section>
+
+
+      <section>
+
+
+        <div class="meta white tiny_meta task_quote">
+          Update the
+          <span class="inline_code">HTML</span> of the
+          <span class="inline_code">result</span>
+          <span class="gold">element</span> so the user can see what's happening.
+        </div>
+
+        <div class="spacer big_spacer"></div>
+        <div class="spacer big_spacer"></div>
+
+        <div class="fragment meta white small_meta">
+          In addition to
+          <span class="gold">accessing</span> the
+          <span class="inline_code">innerHTML</span>
+          <span class="gold">property</span>,
+          <br />we can also
+          <span class="gold">set</span> it. The
+          <span class="gold">DOM</span> will be manipulated.
+        </div>
+
+        <div class="fragment skinny_pre" style="height:225px;">
+          <pre class="language-markup" data-src="src_samples/set_inner_html.js"></pre>
+          <div style="clear:both;"></div>
+        </div>
+
+        <div class="fragment meta tiny_meta white">
+          Open your page in Chrome. Test out both buttons. How'd we do?
+        </div>
+
+      </section>
+
+      <section>
+
+        <div id="ddr2">
+
+          <div id="result2">0</div>
+          <button id="ddr_subtract2">-</button>
+          <button id="ddr_add2">+</button>
+
+        </div>
+
+      </section>
+
+      <section>
+
+
+        <h4 class="no_margin gold">Quick note...</h4>
+
+        <div class="spacer"></div>
+        <div class="fragment meta white small_meta">
+          This is not a CSS course, but it
+          <i>is</i> important to know when to use JavaScript and when to use CSS.
+        </div>
+
+
+      </section>
+
+      <section>
+
+        <h4 class="no_margin blue">Style the result when it changes</h4>
+
+        <div class="spacer big_spacer"></div>
+
+        <div class="fragment meta white small_meta">
+          Set the
+          <span class="gold">class</span> of the
+          <span class="inline_code">result</span>
+          <span class="gold">element</span> to
+          <span class="inline_code">"changing"</span> when either button is clicked.
+        </div>
+
+        <hr />
+
+        <div class="fragment meta white small_meta">
+          After
+          <span class="inline_code">200</span> milliseconds, remove the
+          <span class="gold">class</span>.
+          <br />
+
+          <span class="fragment meta blue tiny_meta">
+            CSS will handle all of the fancy transitions
+            <br />(and CSS typically does this better than JavaScript) </span>
+        </div>
+
+        <hr />
+
+        <div class="fragment meta white small_meta">
+          Test your work!
+        </div>
+
+
+      </section>
+
+      <section>
+
+        <div class="meta white tiny_meta task_quote">
+          Set the
+          <span class="gold">class</span> of the
+          <span class="inline_code">result</span>
+          <span class="gold">element</span> to
+          <span class="inline_code">"changing"</span> when either button is clicked.
+        </div>
+
+        <div class="spacer big_spacer"></div>
+        <div class="spacer big_spacer"></div>
+
+        <div class="fragment meta white small_meta">
+          The
+          <span class="gold">Element object</span> also has a
+          <span class="inline_code">className</span>
+          <span class="gold">property</span>.
+          <br />Just like with
+          <span class="inline_code">innerHTML</span>, we can
+          <span class="gold">set</span> it and the
+          <br />
+          <span class="gold">DOM</span> will be manipulated.
+        </div>
+
+        <div class="fragment skinny_pre" style="height:95px;">
+          <pre class="language-markup" data-src="src_samples/add_class.js"></pre>
+          <div style="clear:both;"></div>
+        </div>
+
+        <div class="fragment meta tiny_meta white">
+          Open your page in Chrome. Test out both buttons.
+          <br />Did the class get added? How can you tell?
+        </div>
+
+      </section>
+
+      <section>
+
+        <div class="meta white tiny_meta task_quote">
+          After
+          <span class="inline_code">200</span> milliseconds, remove the
+          <span class="gold">class</span>.
+        </div>
+
+        <div class="spacer big_spacer"></div>
+        <div class="spacer big_spacer"></div>
+
+        <div class="fragment meta white small_meta">
+          We can use JavaScript's
+          <span class="inline_code">setTimeout()</span>
+          <span class="gold">function</span> to handle the
+          <span class="inline_code">200</span> millisecond delay.
+        </div>
+
+        <hr />
+
+        <div class="fragment meta white small_meta">
+          <span class="inline_code">setTimeout()</span> takes two
+          <span class="gold">arguments</span>. The first is a
+          <span class="gold">function</span> that is
+          <span class="gold">invoked</span> after the specified number of milliseconds. The number milliseconds is the second
+          <span class="gold">argument</span>.
+        </div>
+
+        <div class="fragment" style="height:215px;">
+          <pre class="language-markup" data-src="src_samples/using_timeout.js"></pre>
+          <div style="clear:both;"></div>
+        </div>
+
+      </section>
+
+      <section>
+
+        <div class="meta white tiny_meta task_quote">
+          After
+          <span class="inline_code">200</span> milliseconds, remove the
+          <span class="gold">class</span>.
+        </div>
+
+        <div class="spacer big_spacer"></div>
+        <div class="spacer big_spacer"></div>
+
+        <div class="fragment meta white small_meta">
+          Within the
+          <span class="inline_code">setTimeout()</span>
+          <span class="gold">function</span> (the first argument),
+          <br />
+          <span class="gold">set</span>
+          <span class="inline_code">className</span> to an empty
+          <span class="gold">string</span>.
+        </div>
+
+        <div class="fragment skinny_pre" style="height:165px;">
+          <pre class="language-markup" data-src="src_samples/remove_class.js"></pre>
+          <div style="clear:both;"></div>
+        </div>
+
+      </section>
+
+      <section>
+
+        <h4 class="no_margin blue">How does it look?</h4>
+
+        <div class="fragment white meta small_meta">How about your code?</div>
+
+      </section>
+
+      <section>
+
+        <h4 class="no_margin blue">Refactoring</h4>
+
+        <div class="white meta">
+          "Code refactoring is the process of restructuring existing computer code – changing the factoring – without changing its
+          external behavior."
+        </div>
+
+        <div class="spacer big_spacer"></div>
+
+        <div class="meta gold">
+          Readability, maintainability, less room for error.
+        </div>
+
+      </section>
+
+      <section class="left_align">
+
+        <h2 class="blue uppercase">Thanks for coming</h2>
+
+        <div class="spacer"></div>
+
+        <div class="meta big_meta pink">
+          See you next week!
+        </div>
+
+        <!-- <div class="spacer big_spacer"></div> -->
+
+        <div class="meta tiny_meta white">
+          Have feedback you'd like to share before next week? Let us know!
+        </div>
+
+      </section>
+
+      </div>
+
+      <footer>
+        <div id="twitter">
+          <i class="fa fa-twitter"></i>
+          @GDImpls &#8729; @amlyhamm &#8729; #learnJS &#8729; #gdi
+        </div>
+      </footer>
+
+    </div>
+
+</body>
+
+</html>

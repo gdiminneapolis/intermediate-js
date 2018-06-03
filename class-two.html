@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <title>GDI Mpls - Intermediate JavaScript</title>
+
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,400italic' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/reveal.css">
+  <link rel="stylesheet" type="text/css" href="prism/prism.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+  <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+  <script type="text/javascript" src="js/reveal.js"></script>
+
+  <script type="text/javascript" src="prism/prism.js"></script>
+  <script type="text/javascript" src="js/scripts.js"></script>
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+
+  <div class="reveal" id="gdi">
+
+    <div class="slides">
+
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - -->
+      <!-- Introduction -->
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - -->
+      <section>
+
+        <h3 class="uppercase no_margin">Intermediate JavaScript</h3>
+        <div class="meta blue uppercase small_meta">06.11.18 &#8729; GDI MPLS &#8729; Amy Gebhardt</div>
+        <img src="img/gdi_logo_badge.png" class="top_margin width_50" style="width:30%;">
+
+        <div class="spacer"></div>
+
+        <div class="left_align" style="margin-top:-120px;">
+          <div class="meta white big_meta uppercase tiny_meta">Wifi</div>
+          <div class="meta gold tiny_meta">Network:
+            <span class="white">-</span>
+          </div>
+          <div class="meta gold tiny_meta">Password:
+            <span class="white">-</span>
+          </div>
+          <div class="meta gold tiny_meta">Slides:
+            <span class="white">https://gdiminneapolis.github.io/intermediate-js/class-two.html</span>
+          </div>
+          <div class="meta gold tiny_meta">Project Files:
+            <span class="white">https://tinyurl.com/yd9bo3y6</span>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="left_align">
+        <h3 class="uppercase no_margin gold">Welcome Back!</h3>
+      </section>
+
+      <section>
+        <h3 class="no_margin navy">You belong here.</h3>
+      </section>
+
+      <section class="left_align">
+
+        <h3 class="uppercase no_margin white">Expectations</h3>
+        <div class="spacer big_spacer"></div>
+
+        <div class="fragment meta pink small_meta">Review <span class="fragment meta white tiny_meta">(today!)</span></div>
+        <div class="spacer small_spacer"></div>
+        <div class="fragment meta pink small_meta">Vanilla JavaScript is ugly <span class="fragment meta white tiny_meta">(today!)</span></div>
+        <div class="spacer small_spacer"></div>
+        <div class="fragment meta pink small_meta">Define library and framework <span class="fragment meta white tiny_meta">(today!)</span></div>
+        <div class="spacer small_spacer"></div>
+        <div class="fragment meta pink small_meta">Learn how to research, implement, and use a library <span class="fragment meta white tiny_meta">(today!)</span></div>
+        <div class="spacer small_spacer"></div>
+        <div class="fragment meta pink small_meta">Hear what the "cool" kids are using these days <span class="fragment meta white tiny_meta">(today!)</span></div>
+        <div class="spacer small_spacer"></div>
+        <div class="fragment meta pink small_meta">Do some cool stuff with jQuery</div>
+        <div class="spacer small_spacer"></div>
+
+      </section>
+
+      <section>
+
+        <h3 class="uppercase no_margin navy">get excited.</h3>
+        <div class="spacer small_spacer"></div>
+        <img src="img/excited.gif">
+
+      </section>
+
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - -->
+      <!-- Review - Deep Dive (counter) CONTINUED -->
+      <!-- - - - - - - - - - - - - - - - - - - - - - - - -->
+      <section>
+
+        <div id="ddr">
+
+          <div id="result">0</div>
+          <button id="ddr_subtract">-</button>
+          <button id="ddr_add">+</button>
+
+        </div>
+
+      </section>
+
+      <section>
+
+        <h4 class="no_margin blue">How does it look?</h4>
+
+        <div class="fragment white meta small_meta">How about your code?</div>
+
+      </section>
+
+      <section>
+
+        <h4 class="no_margin blue">Refactoring</h4>
+
+        <div class="white meta">
+          "Code refactoring is the process of restructuring existing computer code – changing the factoring – without changing its
+          external behavior."
+        </div>
+
+        <div class="spacer big_spacer"></div>
+
+        <div class="meta gold">
+          Readability, maintainability, less room for error.
+        </div>
+
+      </section>
+
+      <section>
+
+        <h4 class="no_margin blue">Refactor your counter</h4>
+
+        <div class="spacer big_spacer"></div>
+
+        <div class="fragment meta white small_meta">
+          Use a different
+          <span class="gold">selector</span> to get both buttons into an
+          <span class="inline_code">array</span>.
+        </div>
+
+        <hr />
+
+        <div class="fragment meta white small_meta">
+          Using a
+          <span class="inline_code">for</span>
+          <span class="gold">loop</span>, step through each button and add the
+          <span class="gold">click event listener</span> it. When clicked, update the
+          <span class="inline_code">HTML</span> and the
+          <span class="gold">class</span> for the
+          <span class="inline_code">result</span> element.
+        </div>
+
+        <hr />
+
+        <div class="fragment meta white small_meta">
+          There should only be
+          <span class="inline_code">addEventListener()</span> in your code.
+        </div>
+
+      </section>
+
+      <section>
+
+        <div class="meta white tiny_meta task_quote">
+          Use a different
+          <span class="gold">selector</span> to get both buttons into an
+          <span class="inline_code">array</span>.
+        </div>
+
+        <div class="spacer big_spacer"></div>
+        <div class="spacer big_spacer"></div>
+
+        <div class="fragment meta white small_meta">
+          Instead of using
+          <span class="inline_code">getElementById()</span> for the
+          <span class="inline_code">add</span>
+          and
+          <span class="inline_code">subtract</span> buttons, you can use
+          <span class="inline_code">getElementsByTagName()</span>.
+        </div>
+
+        <div class="fragment" style="height:95px;">
+          <pre class="language-markup" data-src="src_samples/get_elements_by_tag_name.js"></pre>
+          <div style="clear:both;"></div>
+        </div>
+
+        <div class="fragment meta white small_meta">
+          <span class="inline_code">buttons</span> is now an
+          <span class="gold">array</span> of
+          <span class="gold">elements</span>.
+        </div>
+
+      </section>
+
+      <section>
+
+
+        <div class="meta white tiny_meta task_quote">
+          Using a
+          <span class="inline_code">for</span>
+          <span class="gold">loop</span>, step through each button and add the
+          <span class="gold">click event listener</span> it. When clicked, update the
+          <span class="inline_code">HTML</span> and the
+          <span class="gold">class</span> for the
+          <span class="inline_code">result</span> element.
+        </div>
+
+        <div class="spacer big_spacer"></div>
+        <div class="spacer big_spacer"></div>
+
+        <div class="fragment meta white small_meta">
+          Set up the
+          <span class="inline_code">for</span>
+          <span class="gold">loop</span> and set the
+          <span class="gold">break condition</span>
+          to be the
+          <span class="inline_code">length</span> of the
+          <span class="inline_code">buttons</span> array.
+        </div>
+
+        <div class="fragment" style="height:175px;">
+          <pre class="language-markup" data-src="src_samples/set_up_for_loop.js"></pre>
+          <div style="clear:both;"></div>
+        </div>
+
+      </section>
+
+      <section>
+
+        <div class="meta white tiny_meta task_quote">
+          Using a
+          <span class="inline_code">for</span>
+          <span class="gold">loop</span>, step through each button and add the
+          <span class="gold">click event listener</span> it. When clicked, update the
+          <span class="inline_code">HTML</span> and the
+          <span class="gold">class</span> for the
+          <span class="inline_code">result</span> element.
+        </div>
+
+        <div class="spacer big_spacer"></div>
+        <div class="spacer big_spacer"></div>
+
+        <div class="fragment meta white small_meta">
+          Store the "current" button on each
+          <span class="gold">iteration</span> of the
+          <br />loop using
+          <span class="gold">bracket notation</span>.
+        </div>
+
+        <div class="fragment" style="height:155px;">
+          <pre class="language-markup" data-src="src_samples/for_loop_save_btn.js"></pre>
+          <div style="clear:both;"></div>
+        </div>
+
+      </section>
+
+      <section>
+
+        <div class="meta white tiny_meta task_quote">
+          Using a
+          <span class="inline_code">for</span>
+          <span class="gold">loop</span>, step through each button and add the
+          <span class="gold">click event listener</span> it. When clicked, update the
+          <span class="inline_code">HTML</span> and the
+          <span class="gold">class</span> for the
+          <span class="inline_code">result</span> element.
+        </div>
+
+        <div class="spacer big_spacer"></div>
+        <div class="spacer big_spacer"></div>
+
+        <div class="fragment meta white small_meta">
+          Add the
+          <span class="gold">event listener</span> for the current button.
+        </div>
+
+        <div class="fragment" style="height:255px;">
+          <pre class="language-markup" data-src="src_samples/for_loop_with_event_listener.js"></pre>
+          <div style="clear:both;"></div>
+        </div>
+
+      </section>
+
+      <section>
+
+        <div class="meta white tiny_meta task_quote">
+          Using a
+          <span class="inline_code">for</span>
+          <span class="gold">loop</span>, step through each button and add the
+          <span class="gold">click event listener</span> it. When clicked, update the
+          <span class="inline_code">HTML</span> and the
+          <span class="gold">class</span> for the
+          <span class="inline_code">result</span> element.
+        </div>
+
+        <div class="spacer big_spacer"></div>
+        <div class="spacer big_spacer"></div>
+
+        <div class="fragment meta white small_meta">
+          To determine if we should
+          <span class="gold">add</span> or
+          <span class="gold">subtract</span> 1 from the result, we'll need to get at the current button's
+          <span class="inline_code">innerHTML</span>. We need to do this with the
+          <span class="inline_code">this</span> keyword.
+        </div>
+
+        <div class="fragment skinny_pre" style="height:205px;">
+          <pre class="language-markup" data-src="src_samples/button_inner_html.js"></pre>
+          <div style="clear:both;"></div>
+        </div>
+
+      </section>
+
+      <section>
+
+        <div class="meta white tiny_meta task_quote">
+          Using a
+          <span class="inline_code">for</span>
+          <span class="gold">loop</span>, step through each button and add the
+          <span class="gold">click event listener</span> it. When clicked, update the
+          <span class="inline_code">HTML</span> and the
+          <span class="gold">class</span> for the
+          <span class="inline_code">result</span> element.
+        </div>
+
+        <div class="spacer big_spacer"></div>
+        <div class="spacer big_spacer"></div>
+
+        <div class="fragment meta white small_meta">
+          There are a few different ways to go forward. You could use a
+          <span class="gold">conditional statement</span> to add or subtract 1.
+          <br />
+          <br /> You could also use the +/-
+          <span class="gold">string</span> and convert it to an
+          <span class="gold">interger</span>
+          since JavaScript will keep track of the sign. That way, you could always add the value.
+        </div>
+
+
+      </section>
+
+      <section>
+
+        <div class="white meta big_meta">
+          <span class="gold">Option #1:</span> Use conditional statements</div>
+        <div class="fragment" style="height:665px;">
+          <pre class="language-markup" data-src="src_samples/for_loop_operations.js"></pre>
+          <div style="clear:both;"></div>
+        </div>
+
+      </section>
+
+      <section>
+
+        <div class="white meta big_meta">
+          <span class="gold">Option #2:</span> Use the string & always add</div>
+        <div class="fragment" style="height:605px;">
+          <pre class="language-markup" data-src="src_samples/for_loop_operations_second_option.js"></pre>
+          <div style="clear:both;"></div>
+        </div>
+
+      </section>
+
+      <section>
+
+        <div class="white meta big_meta">
+          <span class="gold">Option #3:</span> ??</div>
+
+
+      </section>
+
+      <section>
+
+        <div class="meta white tiny_meta task_quote">
+          Using a
+          <span class="inline_code">for</span>
+          <span class="gold">loop</span>, step through each button and add the
+          <span class="gold">click event listener</span> it. When clicked, update the
+          <span class="inline_code">HTML</span> and the
+          <span class="gold">class</span> for the
+          <span class="inline_code">result</span> element.
+        </div>
+
+        <div class="spacer big_spacer"></div>
+        <div class="spacer big_spacer"></div>
+
+        <div class="fragment meta white small_meta">
+          Finally, update the
+          <span class="gold">class</span> just as we did before.
+        </div>
+
+        <div class="fragment skinny_pre" style="height:325px;">
+          <pre class="language-markup" data-src="src_samples/for_loop_add_class.js"></pre>
+          <div style="clear:both;"></div>
+        </div>
+
+      </section>
+
+      <section>
+
+        <h4 class="no_margin blue">Save and test.
+          <br />Is everything still working as it did?</h4>
+
+        <div class="spacer"></div>
+        <img src="img/refactormeme.jpg" class="fragment">
+
+      </section>
+
+      <section>
+
+        <h2 class="blue">Ready for a break?</h2>
+
+      </section>
+
+      <section>
+
+          <h2 class="white">Even though we've refactored, JavaScript can still be kind of ugly.</h2>
+
+          <div class="spacer"></div>
+          <div class="blue fragment meta small_meta">
+              In the world of programming, developers are always trying to find ways to make writing code easier and prettier.
+          </div>
+
+      </section>
+
+      <section>
+
+          <div class="fragment kind_of_skinny_pre no_margin_pre" style="height:605px;">
+              <pre class="language-markup" data-src="src_samples/jquery_tease.js"></pre>
+              <div style="clear:both;"></div>
+          </div>
+
+      </section>
+
+      <section>
+
+        <h2>JavaScript Libraries & Frameworks</h2>
+
+    </section>
+
+    <section class="left_align">
+
+        <h2 class="gold">A JavaScript library is...</h2>
+        <h3>a package of pre-written JavaScript that allows for easier development.</h3>
+
+        <div class="spacer"></div>
+        <div class="blue fragment meta big_meta">Easier, cleaner code.</div>
+        <div class="blue fragment meta big_meta">Avoid re-inventing the wheel.</div>
+        <div class="blue fragment meta big_meta">Get away from tricky "vanilla" JS.</div>
+        <div class="blue fragment meta big_meta">Be consistent with standards.</div>
+
+    </section>
+
+    <section class="left_align">
+
+        <h2 class="gold">A JavaScript framework is...</h2>
+        <h3>a package of pre-written JavaScript that allows for easier development.</h3>
+
+        <div class="spacer"></div>
+        <div class="blue fragment meta big_meta">Easier, cleaner code.</div>
+        <div class="blue fragment meta big_meta">Avoid re-inventing the wheel.</div>
+        <div class="blue fragment meta big_meta">Get away from tricky "vanilla" JS.</div>
+        <div class="blue fragment meta big_meta">Be consistent with standards.</div>
+
+    </section>
+
+    <section class="left_align">
+
+        <h2 class="gold">Frameworks are a lifestyle.</h2>
+        <div class="white fragment meta big_meta">Tend to be more about standards/consistency.</div>
+        <div class="white fragment meta big_meta">About methodologies, philosophies, & code structure.</div>
+
+        <h2 class="gold">Libraries are a collection of tools.</h2>
+        <div class="white fragment meta big_meta">Tend to be more about plugins, features, etc.</div>
+        <div class="white fragment meta big_meta">About providing tools without all the rules.</div>
+
+    </section>
+
+    <section>
+      <img src="img/potato.gif" style="width: 40%;">
+    </section>
+
+    <section>
+      <img src="img/potato-code.jpg" style="width: 70%;">
+    </section>
+
+    <section>
+
+        <h2 class="gold">Be prepared:</h2>
+        <h2 class="white">You'll see blogs, developers, even companies use these terms differently.</h2>
+
+    </section>
+
+    <section>
+
+        <h2 class="gold">Popular Libraries:</h2>
+
+        <div class="spacer"></div>
+
+        <div class="img_wrapper">
+
+            <img class="fragment" src="img/jquery.png">
+            <img class="fragment" src="img/jqueryui.png">
+            <img class="fragment" src="img/momentjs.jpeg">
+            <img class="fragment" src="img/chartjs.jpeg">
+            <img class="fragment" src="img/mootools.png">
+
+        </div>
+
+    </section>
+
+    <section>
+
+        <h2 class="gold">Popular Frameworks:</h2>
+
+        <div class="spacer"></div>
+
+        <div class="img_wrapper">
+
+            <img class="fragment img_50" src="img/angular.jpeg">
+            <img class="fragment img_50" src="img/backbone.jpeg">
+            <img class="fragment img_20" src="img/ember.png">
+            <img class="fragment img_50" src="img/ionic.jpg">
+            <img class="fragment img_50" src="img/react.png">
+
+        </div>
+
+    </section>
+
+    <section>
+
+        <h2 class="white">JavaScript libraries and frameworks live in separate <span class="inline_code">.js</span> files.</h2>
+        <div class="spacer"></div>
+        <div class="blue meta">You include these in your own project directory and then you can use them!</div>
+
+    </section>
+
+    <section>
+
+        <h4 class="no_margin gold">Let's try it!</h4>
+
+        <span class="spacer"></span>
+
+        <div class="fragment meta white small_meta">
+            Browse to http://momentjs.com/ and download <span class="inline_code">moment.min.js</span>.<br />
+            <div class="spacer"></div>
+            <img src="img/momentdownload.png">
+        </div>
+
+        <hr />
+
+        <div class="fragment meta white small_meta">
+            Move the <span class="inline_code">moment.min.js</span> file to your project's <span class="inline_code">lib</span> directory.
+        </div>
+
+        <hr />
+
+        <div class="fragment meta white small_meta">
+            Create a new file in the <span class="inline_code">intermediate-js-project-files</span> directory.
+        </div>
+
+        <hr />
+
+        <div class="fragment meta white small_meta">
+            Save as <span class="inline_code">workingWithMoment.js</span>.
+        </div>
+
+    </section>
+
+    <section>
+
+        <div class="fragment meta white small_meta">
+            In <span class="inline_code">index.html</span>, update the <span class="inline_code">src</span> attribute
+            of your <span class="inline_code">&lt;script&gt;</span> tag and then add a new one for <span class="inline_code">moment.min.js</span>.
+        </div>
+
+        <div class="fragment" style="height:265px;">
+            <pre class="language-markup" data-src="src_samples/include_moment.html"></pre>
+            <div style="clear:both;"></div>
+        </div>
+
+
+        <div class="fragment meta white small_meta">
+            Now your page knows about <span class="inline_code">moment</span>!
+        </div>
+
+    </section>
+
+    <section>
+
+        <h4 class="no_margin gold">Let's try it!</h4>
+
+        <div class="spacer"></div>
+
+        <div class="fragment meta white small_meta">
+            Using the new <span class="gold">library</span>, have your page display your age.
+        </div>
+
+        <hr />
+
+        <div class="fragment meta white small_meta">
+            Use <span class="inline_code">fromNow()</span> method shown on the MomentJS front page.
+        </div>
+
+        <hr />
+
+        <div class="fragment meta white small_meta">
+           Part of using libraries and frameworks is learning how to follow their documentation.
+        </div>
+
+    </section>
+
+    <section class="left_align">
+
+        <h4 class="no_margin gold">Installing libraries/frameworks</h4>
+        <div class="meta gold big_meta">for your project</div>
+
+        <div class="spacer big_spacer"></div>
+
+        <div class="fragment meta white">
+            1) Download & save in your project directory.
+        </div>
+
+        <div class="fragment meta tiny_meta blue">
+            (GitHub, website, etc)
+        </div>
+
+        <div class="spacer"></div>
+
+        <div class="fragment meta white">
+          2) Use a CDN.
+        </div>
+
+      <div class="fragment meta tiny_meta blue">
+          (content delivery network; allow someone else - like Google - to host)
+      </div>
+
+      <div class="spacer"></div>
+
+        <div class="fragment meta white">
+            3) Use a package manager.
+        </div>
+
+        <div class="fragment meta tiny_meta blue">
+            (<a href="https://yarnpkg.com/lang/en/">yarn</a>, <a href="https://www.npmjs.com/">npm</a>, <a href="https://bower.io/">bower</a>, etc)
+        </div>
+
+    </section>
+
+    <section class="left_align">
+
+      <h2 class="blue uppercase">Thanks for coming</h2>
+
+      <div class="spacer"></div>
+
+      <div class="meta big_meta pink">
+        See you next week!
+      </div>
+
+      <!-- <div class="spacer big_spacer"></div> -->
+
+      <div class="meta tiny_meta white">
+        Have feedback you'd like to share before next week? Let us know!
+      </div>
+
+    </section>
+
+      </div>
+
+      <footer>
+        <div id="twitter">
+          <i class="fa fa-twitter"></i>
+          @GDImpls &#8729; @amlyhamm &#8729; #learnJS &#8729; #gdi
+        </div>
+      </footer>
+
+    </div>
+
+</body>
+
+</html>

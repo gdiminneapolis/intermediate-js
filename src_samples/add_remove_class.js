@@ -1,0 +1,1 @@
+$("li").first().addClass("a_new_class");

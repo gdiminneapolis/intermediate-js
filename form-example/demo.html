@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Intermediate JavaScript Form Demo</title>
+    <script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+
+    <style type="text/css">
+        @import url(http://fonts.googleapis.com/css?family=Roboto:300);
+        body {
+            padding:1em;
+            font-family:"Roboto";
+            color:#666;
+            font-size:18pt;
+        }
+        form {
+            max-width:800px;
+            margin:0 auto;
+        }
+        input[type="text"] {
+            font-size:12pt;
+            color:#1F4256;
+            padding:8px;
+            font-family:"Roboto";
+            margin-left:0.6em;
+        }
+        input[type="text"]:focus {
+            border:2px solid #EF5B6A;
+            outline:none;
+        }
+        input[type="checkbox"] {
+            float:left;
+            margin-left:4em;
+        }
+        input.no_indent {
+            margin-left:0;
+        }
+        label.checkbox_label {
+            display:block;
+            margin:-0.3em 0 0 0.6em;
+            float:left;
+        }
+        .form_group, #library_list {
+            display:block;
+            margin:1em 0.5em;
+        }
+        #gdi_course {
+            font-size:11pt;
+        }
+        #library_list, .hidden_gdi_course_content {
+            display:none;
+        }
+        hr {
+            border:0;
+            border-top:2px solid #d8ae64;
+            border-bottom:2px solid #d8ae64;
+            margin-bottom:30px;
+            height:6px;
+            background:transparent;
+        }
+        input[type='submit'] {
+            background-color:#EF5B6A;
+            color:#fff;
+            font-family:"Roboto";
+            font-size:16pt;
+            outline:0;
+            border:0;
+            padding:1em;
+            text-transform:uppercase;
+            -webkit-transition: 0.1s 0.1s;
+            -moz-transition: 0.1s 0.1s;
+            -ms-transition: 0.1s 0.1s;
+            -o-transition: 0.1s 0.1s;
+            transition: 0.1s 0.1s;
+        }
+        input[type='submit']:hover {
+            background-color:#1F4256;
+            cursor:pointer;
+        }
+        label.checked_label {
+            color:#EF5B6A;
+        }
+        .clear {
+            clear:both;
+        }
+        .hidden_gdi_course_content {
+            margin-left:2em;
+            font-size:14pt;
+            text-transform:uppercase;
+            margin-bottom:2em;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<form action="MAILTO:amy@gdiminneapolis.com" method="post" enctype="text/plain">
+    <div class="form_group">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" />
+    </div>
+    <hr />
+    <div class="form_group">
+        <input type="checkbox" name="like_libraries" id="like_libraries" class="no_indent" />
+        <label for="like_libraries" class="checkbox_label">I like JavaScript libraries</label>
+    </div>
+    <div class="clear"></div>
+    <div id="library_list">
+        <div class="form_group">
+            <input type="checkbox" name="jquery" id="jquery" />
+            <label for="jquery" class="checkbox_label">jQuery</label>
+            <input type="checkbox" name="jqueryui" id="jqueryui" />
+            <label for="jqueryui" class="checkbox_label">jQuery UI</label>
+        </div>
+        <div class="form_group">
+            <input type="checkbox" name="momentjs" id="momentjs" />
+            <label for="momentjs" class="checkbox_label">MomentJS</label>
+            <input type="checkbox" name="angular" id="angular" />
+            <label for="angular" class="checkbox_label">Angular</label>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <hr />
+    <div class="form_group">
+        <label for="gdi_course">The next Girl Develop It class I'm taking is</label>
+        <br />
+        <select id="gdi_course" name="gdi_course">
+            <option value="none"></option>
+            <option value="wordpress">Intro to WordPress</option>
+            <option value="php">Practical PHP Primer</option>
+            <option value="instructor">GDI Instructor 101</option>
+        </select>
+    </div>
+
+    <div class="hidden_gdi_course_content" id="wordpress">Saturday, June 16.</div>
+    <div class="hidden_gdi_course_content" id="php">3 Week Series Starting July 18.</div>
+    <div class="hidden_gdi_course_content" id="instructor">TBD</div>
+
+    <hr />
+    <input type="submit" value="submit" />
+</form>
+
+    <script type="text/javascript">
+
+        // A $( document ).ready() block.
+        $( document ).ready(function() {
+
+            $("#like_libraries").on("change", function() {
+
+                // is it checked?
+                if ($(this).prop("checked")) {
+
+                    $("#library_list").slideDown();
+
+                } else {
+                    $("#library_list").slideUp();
+                }
+
+            });
+
+            $("input[type='checkbox']").on("change", function() {
+
+                var label = getLabelFromCheckbox($(this));
+
+                if ($(this).prop("checked")) {
+                    label.addClass("checked_label");
+                } else {
+                    label.removeClass("checked_label");
+                }
+
+            });
+
+            $("#gdi_course").on("change", function() {
+
+                var selectedOption = $(this).val();
+                $(".hidden_gdi_course_content").hide();
+                $("#" + selectedOption).fadeIn();
+
+            });
+
+            function getLabelFromCheckbox(checkboxElement) {
+                var id = checkboxElement.attr("id");
+                return $("label[for='" + id + "']");
+            }
+
+            $("form").on("submit", function(e) {
+
+                e.preventDefault();
+
+                var emailBody = "";
+
+                emailBody += $("#name").val() + " ";
+
+                if ($("#like_libraries").prop("checked")) {
+
+                    emailBody += "likes ";
+
+                    var chosenJavaScriptLibraries = [];
+
+                    $("#library_list").find("input[type='checkbox']").each(function () {
+
+                        if ($(this).prop("checked")) {
+                            chosenJavaScriptLibraries.push(getLabelFromCheckbox($(this)).text());
+                        }
+
+                    });
+
+                    if (chosenJavaScriptLibraries.length > 0) {
+                        emailBody += chosenJavaScriptLibraries.join(", ") + ".";
+                    } else {
+                        emailBody += "JavaScript libraries.";
+                    }
+
+                } else {
+                    emailBody += "does not like JavaScript libraries.";
+                }
+
+                emailBody += " The next GDI course they are taking is " + $("#gdi_course option:selected").text() + ".";
+
+                var emailAddressToSendResponseTo = "amy@gdiminneapolis.com";
+                var postData = {
+                  emailBody: emailBody,
+                  sendTo: emailAddressToSendResponseTo
+                };
+
+                $.post("http://amlyhamm.com/gdi/emailEndpoint.php", postData, function() {
+                  console.log("PHP request is complete! Email was sent! It may take a few minutes for you to actually see it though :)");
+                });
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
